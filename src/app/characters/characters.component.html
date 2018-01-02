@@ -1,0 +1,25 @@
+<h2>{{ selectedCharacter.firstName | uppercase }} Details</h2>
+<div>
+	<span>id: </span>{{selectedCharacter.id}}
+</div>
+<div *ngIf="selectedCharacter">
+	<ul>
+		<li>firstName: <input [(ngModel)]="selectedCharacter.firstName"
+			placeholder="firstName">
+		</li>
+		<li>lastName: <input [(ngModel)]="selectedCharacter.lastName"
+			placeholder="lastName">
+		</li>
+		<li>description: <input
+			[(ngModel)]="selectedCharacter.description" placeholder="description">
+		</li>
+	</ul>
+</div>
+
+<h2>My Characters</h2>
+<ul class="characters">
+	<li *ngFor="let character of responseItem.characters"
+		[class.selected]="character === selectedCharacter" (click)="onSelect(character)">
+		<span class="badge">{{character.id}}</span> {{character.firstName}}
+	</li>
+</ul>

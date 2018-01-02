@@ -15,18 +15,33 @@ export class AppComponent {
 
   constructor(private http: Http) {
     console.log('hello');
-    this.getItems();
-    this.getData();
+    // this.list();
   }
 
-  getData() {
-    return this.http.get(this.apiUrl)
-      .map((res: Response) => res.json());
+  getAll() {
+    return this.http
+      .get(this.apiUrl)
+      .map(response => response.json() || []);
   }
-  getItems() {
-    this.getData().subscribe(data => {
+
+  getOne(id: string) {
+    return this.http
+      .get(`${this.apiUrl}/${id}`)
+      .map(response => response.json() || []);
+  }
+
+  deleteOne(id: string) {
+    return this.http
+      .delete(`${this.apiUrl}/${id}`)
+      .map(response => response.json() || []);
+  }
+
+  list() {
+    this.getAll().subscribe(data => {
       console.log(data);
       this.data = data;
     });
+    this.getAll();
   }
+
 }
