@@ -1,6 +1,10 @@
-# RestAngular
+# mycharacters-apiclient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
+Generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
+
+This project is a REST client created with Angular5.
+
+The idea is to connect this project with the API Server: [mycharacters-apiserver](https://github.com/txemasv/mycharacters-apiserver) created with SpringBoot. You can execute both and just play.
 
 ## Development server
 
