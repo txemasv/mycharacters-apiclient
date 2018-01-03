@@ -2,6 +2,7 @@
 <div class="characters">
 	<span class="badge">id: </span>{{selectedCharacter.id}}
 </div>
+
 <div *ngIf="selectedCharacter">
 	<ul class="characters">
 		<li>firstName: <input [(ngModel)]="selectedCharacter.firstName"
@@ -14,6 +15,7 @@
 			[(ngModel)]="selectedCharacter.description" placeholder="description">
 		</li>
 	</ul>
+	<button (click)="saveCharacter()">save</button>
 </div>
 
 <h2>My Characters</h2>

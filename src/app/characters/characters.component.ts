@@ -6,8 +6,6 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {of} from 'rxjs/observable/of';
 
-
-
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
@@ -30,6 +28,11 @@ export class CharactersComponent implements OnInit {
 
   onSelect(character: Character): void {
     this.selectedCharacter = character;
+  }
+
+  saveCharacter(): void {
+    this.characterService.updateCharacter(this.selectedCharacter)
+      .subscribe();
   }
 
   getCharacters(): void {
