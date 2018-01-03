@@ -1,9 +1,11 @@
 import {Character} from '../shared/models/character';
-import { ResponseItem } from '../shared/models/responseitem';
+import {ResponseItem} from '../shared/models/responseitem';
 import {CharacterService} from '../shared/services/character.service';
+import {MessageService} from '../shared/services/message.service';
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {of} from 'rxjs/observable/of';
+
 
 
 @Component({
@@ -24,7 +26,7 @@ export class CharactersComponent implements OnInit {
     description: '',
   };
 
-  constructor(private characterService: CharacterService) {}
+  constructor(private characterService: CharacterService, public messageService: MessageService) {}
 
   onSelect(character: Character): void {
     this.selectedCharacter = character;

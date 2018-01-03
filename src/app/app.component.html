@@ -4,19 +4,6 @@
 </div>
 <h2>List of characters</h2>
 <div>
-
 	<app-characters></app-characters>
-
-	<h1>Parte de despues REST</h1>
-	<ul>
-		<li *ngFor="let character of data.characters"><span>{{character.firstName}}</span></li>
-	</ul>
-	<br /> <br /> <br /> <br /> <br />
-	<ng-container *ngFor="let character of data.characters">
-	<p>ID: {{character.id}}</p>
-	<p>FirstName: {{character.firstName}}</p>
-	<p>LastName: {{character.lastName}}</p>
-	<p>Description: {{character.description}}</p>
-	<br />
-	</ng-container>
+	<app-messages></app-messages>
 </div>
